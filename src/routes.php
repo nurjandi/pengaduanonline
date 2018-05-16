@@ -54,7 +54,7 @@ $app->post('/loginUser/', function (Request $request, Response $response){
 
 $app->post('/addPengaduan/', function (Request $request, Response $response){
     $pengaduan = $request->getParsedBody();
-    $sql = "INSERT INTO user (ID, judul, NIM, keluhan, saran, jenis_keluhan, foto) VALUE ('', :judul, :NIM, :keluhan, :saran, :jenis_keluhan, :foto)";
+    $sql = "INSERT INTO data_pengaduan (ID, judul, NIM, keluhan, saran, jenis_keluhan, foto) VALUE ('', :judul, :NIM, :keluhan, :saran, :jenis_keluhan, :foto)";
     $stmt = $this->db->prepare($sql);
     $data = [
         ":judul" => $pengaduan["judul"],
